@@ -1,0 +1,11 @@
+{
+    "image": "andrewmat2000/grpc-dev-container",
+    "customizations": {
+        "vscode": {
+            "extensions": [
+                "pbkit.vscode-pbkit",
+                "ms-vscode.cpptools-extension-pack"
+            ]
+        }
+    }
+}
