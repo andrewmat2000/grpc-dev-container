@@ -56,3 +56,15 @@ RUN cmake \
       ../..
   
 RUN make -j$(nproc) install
+
+# gRPC cross
+RUN GRPC_CROSS_BUILD_DIR=$GRPC_DIR/cmake/cross_build && \
+  mkdir -p $GRPC_CROSS_BUILD_DIR && \
+  cd $GRPC_CROSS_BUILD_DIR && \
+  cmake -DCMAKE_TOOLCHAIN_FILE=$CMAKE_CROSS_TOOLCHAIN \
+    -DCMAKE_BUILD_TYPE=Release \
+    -DCMAKE_INSTALL_PREFIX=$CROSS_TOOLCHAIN/grpc_install \
+    ../.. && \
+  make -j`nproc` install && \
+  cd / && \
+  rm -rf $GRPC_DIR

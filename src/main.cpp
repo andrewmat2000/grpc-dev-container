@@ -1,8 +1,8 @@
 #include <iostream>
 
 #include "grpc++/create_channel.h"
-#include "proto/greeter.grpc.pb.h"
-#include "proto/greeter.pb.h"
+#include "greeter.grpc.pb.h"
+#include "greeter.pb.h"
 
 int main()
 {
